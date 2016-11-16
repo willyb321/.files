@@ -1,5 +1,5 @@
 # Willyb321's .files
-> My dotfiles, for mac. Uses oh my zsh.
+> My dotfiles, for mac. Uses oh my zsh. Has my own version of .macos / .osx.
 
 
 # Get them
