@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Install command-line tools using Homebrew.
-
+# Get brew.
+hash brew 2>/dev/null || { echo >&2 "You don't have brew, getting it now."; /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 # Make sure we’re using the latest Homebrew.
 brew update
 
@@ -35,14 +35,14 @@ brew install homebrew/dupes/screen
 #brew install cifer
 #brew install dex2jar
 #brew install dns2tcp
-#brew install fcrackzip
+
 #brew install foremost
 #brew install hashpump
 #brew install hydra
 #brew install john
 #brew install knock
 #brew install netpbm
-#brew install nmap
+
 #brew install pngcheck
 #brew install socat
 #brew install sqlmap
@@ -68,9 +68,9 @@ brew install homebrew/dupes/screen
 #brew install rename
 #brew install rhino
 #brew install speedtest_cli
-#brew install ssh-copy-id
+
 #brew install testssl
-#brew install tree
+
 #brew install vbindiff
 #brew install webkit2png
 #brew install zopfli
@@ -184,7 +184,18 @@ yarn \
 yasm \
 youtube-dl \
 z \
-zeromq
+zeromq \
+ssh-copy-id \
+tree \
+git \
+ack \
+git-lfs \
+fcrackzip \
+nmap \
 
+
+brew tap caskroom/cask
+
+brew cask install alfred cakebrew fing gitify google-drive osxfuse qlcolorcode qlmarkdown qlstephen quicklook-json xquartz
 # Remove outdated versions from the cellar.
 brew cleanup

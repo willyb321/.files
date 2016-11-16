@@ -9,13 +9,15 @@ function check() {
 }
 
 function doIt() {
-	git clone https://github.com/willyb321/.files.git
+	git clone https://github.com/willyb321/.files.git $HOME/.files
+	cd $HOME/.files
+	sh .macos
+	sh brew.sh
 	rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		-avh --no-perms . ~;
-		sh .macos
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
