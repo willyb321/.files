@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-
+read -p "Time to get your Applications. This will take a while." -n1 -s
+echo '\n'
 # Get brew.
 hash brew 2>/dev/null || { echo >&2 "You don't have brew, getting it now."; /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"; }
 # Make sure we’re using the latest Homebrew.
@@ -7,7 +8,8 @@ brew update
 
 # Upgrade any already-installed formulae.
 brew upgrade
-
+brew tap homebrew/science
+brew tap caskroom/cask
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
@@ -54,8 +56,7 @@ brew install homebrew/dupes/screen
 #brew install xz
 
 # Install other useful binaries.
-#brew install ack
-#brew install dark-mode
+
 #brew install exiv2
 #brew install git
 #brew install git-lfs
@@ -141,7 +142,6 @@ mobile-shell \
 mysql \
 net-snmp \
 nettle \
-node \
 ntopng \
 openjpeg \
 openssl \
@@ -192,10 +192,31 @@ ack \
 git-lfs \
 fcrackzip \
 nmap \
+go \
+ack \
+dark-mode \
 
 
-brew tap caskroom/cask
+brew cask install --appdir="/Applications" \
+alfred
+cakebrew \
+fing \
+gitify \
+google-drive \
+osxfuse \
+qlcolorcode \
+qlmarkdown \
+qlstephen \
+quicklook-json \
+xquartz \
+intellij-idea \
+sublime-text \
+spotify \
+spotify-notifications \
+vlc \
+iterm2 \
+gitkraken \
 
-brew cask install alfred cakebrew fing gitify google-drive osxfuse qlcolorcode qlmarkdown qlstephen quicklook-json xquartz
+
 # Remove outdated versions from the cellar.
 brew cleanup
